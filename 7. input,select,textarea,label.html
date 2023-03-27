@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>input,select,textarea,label 태그</title>
+</head>
+
+<body>
+<div>
+    <span> button</span>
+    <input type="button" value="아무 버튼">
+</div>
+<div>
+    <input type="checkbox">
+    <span> 약관을 읽어보았고 이해하였으며 동의합니다.</span>
+</div>
+<div>
+    <span>date</span>   <!--사용 많이-->
+    <input type="date">
+    <span> 생년원일을 선택해주세요.</span>
+</div>
+<div>
+    <span>email</span>
+    <input type="email">
+    <span>이메일을 입력해주세요.</span>
+</div>
+<div>
+    <span>file</span>
+    <input accept = ".zip,imgage/*" type = "file">
+    <span>프로필 이미지를 선택해 주세요.</span>
+</div>
+<div>
+    <span>file</span>
+    <input multiple type="file">
+    <span> 프로필 이미지를 선택</span>
+</div>
+<div>
+    <span>hidden</span>
+    <input type ="hidden">
+</div>
+<div>
+    <span>number</span>
+    <input value ="0" type ="number">
+    <span>나이를 입력해 주세요.</span>
+</div>
+<div>
+    <span>password</span>
+    <input type = "password">
+    <span>비밀번호를 입력해 주세요.</span>
+</div>
+<div>
+    <span>radio</span>
+    <input name ="tc" type ="radio">
+    <span> KT</span>
+    <input name ="tc" type ="radio">
+    <span> LGU+</span>
+    <input name ="tc" type ="radio">
+    <span> SKT</span>
+</div>
+<div>
+    <span>reset</span>
+    <input type ="reset" value="다시입력">
+</div>
+<div>
+    <span>submit</span>
+    <input type="submit" value="로그인">
+</div>
+<div>
+    <span>tel</span>
+    <input type="tel" >
+    <span>연락처를 입력해주세요.</span>
+</div>
+<div>
+    <span>text</span>
+    <input type="text">
+    <span> 아이디를 입력해주세요.</span>
+</div>
+<div>
+    <span>time</span>
+    <input type="time">
+    <span>입실 시간을 입력하세요</span>
+</div>
+<form>
+    <input value ="0" type ="number" min="14" max ="28">
+    <input name ="id" minlength="5" maxlength="10" required type="text">
+    <input name ="pw" type ="password">
+    <input type ="submit" value="로그인">
+</form>
+
+</body>
+</html>
+
+
+<!--
+# input
+- input 태그는 사용자로부터 입력값을 받기 위해 사용한다
+- 자동으로 닫히는 태그 :O
+- 반드시 form 태그에 속해있고, name 속성값을 가지고 있어야 올바르게 서버로 전송된다.
+- 속성
+    - accept : type 속성이 file 일때 입력받을 수 있는 파일을 제한다. 이는 콤마(,)로 구분된 확장자 형식 혹은 MIME 타입이어야 한다.
+        -  jpg 및 jpeg 확장자로 제한할 때 : .jpg , .jpeg
+        - 모든 이미지 타입을 허용할 때 : .image/*
+        - zip 파일 및 모든 이미지 타입을 허용할 때 : .zip,image/*
+        - zip 파일만 허용할 때 :  .zip,.rar,.7z
+    - maxlength : 문자열의 값을 받을때 최대 길이를 정한다.
+    - minlength : 문자열의 값을 받을때 최소 길이를 정한다.
+    - multiple : type 속성 값이 file 일 때 여러개의 파일을 선택할 수 있게한다.
+    - max : type 이 number 일 때 가질 수 있는 최댓값
+    - min : type 이 number 일 때 가질 수 있는 최솟값
+    - name : 해당 input 태그가 가진 값을 서버로 전송할 때 사용할 식별자, 특별한 경우가 아니라면 동일한 form 내에서 고유해야한다.
+    - required : 해당 input 태그의 값이 비어있을 수 없음을 의미한다.
+    - type : 해당 input 태그의 입력 유형을 지정한다
+      아래 값들을 사용할 수 있다.
+        - button : 아무런 역활을 하지 않는 버튼
+                   value 속성 값을 함께 지정하여 표시될 텍스트를 설정할 수 있다.
+        - checkbox : 어떠한 선택지에 대한 여/부(True/False)값
+        - date : 날짜를 선택할 수 있다
+        - email : 이메일, 브라우저 내부 기능으로 어느 정도의 정규화 및 모바일 접근성 강화가 이루어진다.
+        - file : 파일을 첨부하고자 할 떄 사용한다. 단, input 태그의  type 속성이 file 인 경우
+                 이를 포함하는 form 태그의 enctype 속성 값이 반드시 multipart/form-data 로 지정되어야 한다.
+        - hidden : 숨겨진 필드로 활용할때 사용한다.
+        - number : 숫자를 입력받는다. 스피너(Spinner)가 표시되고 모바일 접근성을 강화한다.
+        - password : 암호를 입력받는다.입력값을 별표(*)처리하고, 브라우저 내장 기능인 계정 자동 완성 기능에서 비밀번호 필드를 담당한다.
+        - radio : name 속성 값이 동일한 radio 인 input 들 사이에서 '하나'만 선택할 수 있게 한다.
+        - reset : 동일한 form 태그 안에 있는 모든 input 등의 입력값을 초기화한다.
+        - submit : 동일한 form 태그 안에 있는 모든 input 등의 값을 서버로 전송하는 버튼이다.
+        - tel : 전화번호를 입력받는다. 모바일 접근성을 강화한다.
+        - text : 일반 문자열을 입력받는다.
+        - time : 시간을 입력받는다.
+    - value : 해당 input 태그가 가지는 값을 지정한다
+              단, type 속성 값이 button 이거나 submit, reset 등 버튼 형식 일떄 value 속성값은 표시할 텍스트가 된다.
+
+
+<input value ="0" type ="number">
+       -> 기본설정으로 0이 입력되어있다
+
+# select
+# option
+# optgroup
+# textarea
+# label
+
+
+
+-->

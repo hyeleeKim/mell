@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang ="ko">
+<head>
+    <meta charset = "UTF-8">
+    <title>form 태그</title>
+</head>
+<body>
+<form>
+    <input name="e"  type ="email">
+    <input name="p" type = "password">
+    <input type="submit" value=" 로그인">
+</form>
+<input name ="code" type = "text" placeholder="보안코드">
+
+</body>
+</html>
+
+
+
+<!--
+# form
+- form 태그는 서버로 전송하고자 하는 input,select, textarea 등의 사용자 입력값을 받을 수 있는 태그들을 담을 수 있는 양식 태그이다
+- 자동으로 닫히는 태그 : X
+- 속성
+    - method
+    - enctype
+
+<form method = "" enctype ="" >
+
+
+프로토콜://도메인/경로?
+__________________ ->___________
+    주소                 매개변수
+                      (query=   ) 내용이 중요!
+                      키1=값1 & 키2=값2   -> 각 키와 값의 구분은 &로 한다.
+http://localhost:63342/html-tag/form.html ? e=sdf%40sgjfg  &  p=12345
+                                              입력값              입력값
+string email = request.getParamter
+("em"); //null
+
+form 태그 안에 없으면 보안코드 입력값이 URL에 저장되지 않는다 !
+http://localhost:63342/html-tag/form.html?  e=asdf%40asdf  &  p=123456
+
+
+placeholder : 입력 필드에 사용자가 적절한 값을 입력할 수 있도록 도와주는 짧은 도움말을 명시
+-->
